@@ -1,0 +1,15 @@
+- hosts: all
+  user: rhel
+  become: true
+  tasks:
+    - package:
+        name: httpd
+    - service:
+        name: httpd
+        state: started
+    - ansible.posix.firewalld:
+        service: httpd
+        state: enabled
+        permanent: true
+        immediate: true
+
