@@ -7,7 +7,7 @@
         group: wheel
         state: present
     - name: Set authorized key
-        ansible.posix.authorized_key:
+      ansible.posix.authorized_key:
         user: john
         state: present
         key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOLQ9wSfEziMiLP3Uz4Qx/lfC+Bf9mS8au3SEEiGK56W jirik@fedora
