@@ -2,14 +2,15 @@
   user: rhel
   become: true
   tasks:
-    - user:
-        name: "john"
-        group: wheel
-        state: present
     - name: Set authorized key
       ansible.posix.authorized_key:
         user: john
-        state: present
-        key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOLQ9wSfEziMiLP3Uz4Qx/lfC+Bf9mS8au3SEEiGK56W jirik@fedora
+        state: absent
+        key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCft58rtEcM77WI2VYeC12ezdkIyCTO0KEfQqObLUBtmTut/m0Ta3/G7K8bIWWg7C64s+nw2Nd3EjlJM3uY0kNsMWUrEdbBSbjX9rmx6yj3y9IQIzEmTE6Pzno6+7VtBdoRVaJnTiPGi4VP1KvHWwa6jxOTKWKhv0ZSYpnrBZta6pakQ1kocaamWLRM3KGG2vioOQSUnj+BsClKRnBfJjTlqMsbv9nvBgXI+tf21zwuJhquu1NckDm1An73MGpBnYeP9+Vdsb/Qnc2gLDD6xPGGvAAGKIfHtnKkXirAZcbPO7D0PHuGDNvK043LKCC+kexUdUt25sgKjpZbz6eAvwych3TP3ddFP5cob8NEdPLvyWVLUFbfgxYaG1JyYal1+4kzVS3jHTrriNY6bKM4mlEHWhRFof8mIKh5EImOKf6RPC7OinlEg0pN6NZ5n574juSB8R4YTjqBdtuixlseGi1lOcj0p6gE2HoQtkU5Jsv/3W0poMo33vbteWSZRVvcBs0= student@workstation.lab.example.com
+    - user:
+        name: "john"
+        group: wheel
+        state: absent
+
 
 
